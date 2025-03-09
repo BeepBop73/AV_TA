@@ -10,6 +10,7 @@
 #include <cmath>
 #include <memory>
 
+using namespace std;
 
 const int values[] = { 1,2,3,4,5 };
 const int val_size = sizeof values / sizeof(int);
@@ -17,9 +18,9 @@ const int val_size = sizeof values / sizeof(int);
 
 
 class Foo {
-    std::vector<int> mElements;
+    vector<int> mElements;
 public:
-    Foo(std::initializer_list<int> list)
+    Foo(initializer_list<int> list)
     : mElements(list) {}
 };
 
@@ -40,16 +41,16 @@ int main() {
 
     int x = -10;
     int y = 15;
-    std::cout << " " << x << ", " << y << std::endl;
+    cout << " " << x << ", " << y << endl;
 
     // print integer ratios of y:x till x < y
     // invalid ratios should print 0
     while (x < y)
     {
         if (x != 0) {
-            std::cout << "ratio: " << (y / x) << std::endl;
+            cout << "ratio: " << (y / x) << endl;
         } else {
-            std::cout << "ratio: 0" << std::endl;  
+            cout << "ratio: 0" << endl;  
         }
         x++;
         y--;
@@ -59,20 +60,20 @@ int main() {
     int i = 1, j = 1; // don't change values
     if ((i != 3) & (j == 1))
     {
-        std::cout << "j is 1 and i is not 3\n";
+        cout << "j is 1 and i is not 3\n";
     }
     else {
-        std::cout << "either j is NOT 1, or i is set to 3\n";
+        cout << "either j is NOT 1, or i is set to 3\n";
     }
 
 
-    typedef std::map<int, double> valmap;
+    typedef map<int, double> valmap;
     valmap m;
 
     for (int i = 0; i < val_size; i++)
-        m.insert(std::make_pair(values[i], pow(values[i], .5)));
+        m.insert(make_pair(values[i], pow(values[i], .5)));
 
-    m.insert(std::make_pair(1, 2));
+    m.insert(make_pair(1, 2));
 
 
     int n = 1;
@@ -81,7 +82,7 @@ int main() {
     show_output(p);
 
     // Initialise a person on the heap with the use of smart pointers (unique_ptr) instead.
-    std::unique_ptr<person> ptr = std::make_unique<person>();
+    unique_ptr<person> ptr = make_unique<person>();
 
     ptr->age = 10;
     ptr->weight = 55.5;
