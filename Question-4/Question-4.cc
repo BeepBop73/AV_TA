@@ -16,6 +16,11 @@
 /// More information about integrating Google Tests can be found here https://google.github.io/googletest/quickstart-cmake.html
 /// You can learn about Mock Testing here: https://google.github.io/googletest/gmock_for_dummies.html
 
+//update cmake file
+//implement mock
+//fix test
+
+
 
 // Forward declaration. Don't worry about this.
 class Actor;
@@ -50,6 +55,10 @@ public:
 
 };
 
+class MockObserver : public Observer {
+public:
+    MOCK_METHOD(void, ReactToEvent, (Actor* actor), (override));
+};
 // This will not compile until you implement MockObserver.
 
 TEST(ActorTest, ObserversAreCalled) {

@@ -23,6 +23,10 @@ using namespace std;
 // https://www.csselectronics.com/pages/can-bus-simple-intro-tutorial
 // https://www.csselectronics.com/pages/can-dbc-file-database-intro
 
+//BO_ 1797 ECU_WheelSpeed: 8 Vector__XXX
+//SG_ WheelSpeedRR : 32|16@0+ (0.1,0) [0|0] "km/h" Vector__XXX
+//Look for can id of 1797 (705), from bit 32, get 16 bits, apply a scaling factor of 0.1
+
 int main() {
 //import candump.log and create output file
 ifstream infile("candump.log");
