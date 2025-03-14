@@ -30,13 +30,15 @@ using namespace std;
 int main() {
 //import candump.log and create output file
 ifstream infile("candump.log");
-ofstream outfile("output.txt");
+ofstream outfile("..\\Question-3\\output.txt");
 
+//error checking
 if (!infile.is_open() || !outfile.is_open()) {
     cerr << "Error opening file!" << endl;
     return 1;
 }
 
+//get and slice string
 string line;
 while (getline(infile, line)) {
     stringstream ss(line);
@@ -72,8 +74,9 @@ while (getline(infile, line)) {
     }
 }
 
-    infile.close();
-    outfile.close();
+//close files
+infile.close();
+outfile.close();
 
-    return 0;
+return 0;
 }
